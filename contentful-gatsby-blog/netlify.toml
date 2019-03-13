@@ -4,3 +4,9 @@
 [Build]
   Publish = ""
   Functions = ""
+
+[[redirects]]
+from = "/*/amp"
+to = "/toptest.com/:splat"
+status = 200
+force = false

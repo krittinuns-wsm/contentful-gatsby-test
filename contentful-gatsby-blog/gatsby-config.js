@@ -9,6 +9,7 @@ try {
 contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
   accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulConfig.accessToken,
+  environment: process.env.CONTENTFUL_ENVIRONMENT || contentfulConfig.environment,
 }
 
 const { spaceId, accessToken } = contentfulConfig
@@ -28,6 +29,19 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
-    }
+    },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./src/data/`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        typeName: `Json`,
+      },
+    },
   ],
 }
