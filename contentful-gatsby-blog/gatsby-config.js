@@ -30,18 +30,5 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },
-    `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `./src/data/`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-json`,
-      options: {
-        typeName: `Json`,
-      },
-    },
   ],
 }
